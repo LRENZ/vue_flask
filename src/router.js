@@ -39,7 +39,7 @@ const router = new Router({
 
 
 router.beforeEach((to, from, next) => {
-     console.log(to)
+     // console.log(to)
     if (!!to.meta.requireAuth) { // 判断该路由是否需要登录权限
             if ( !!localStorage.token) { // 判断缓存里面是否有 userName  //在登录的时候设置它的值
                 console.log('yes')

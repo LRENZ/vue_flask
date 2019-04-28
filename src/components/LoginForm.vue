@@ -1,19 +1,29 @@
 <template>
   <div>
-    <h1>登录</h1>
-    <el-form :model="loginFormFields" ref="loginForm" label-width="80px" :rules="rules" v-loading="loading">
-      <el-form-item label="用户名" prop="username">
-        <el-input v-model="loginFormFields.username"></el-input>
-      </el-form-item>
-      <el-form-item label="密码" prop="password">
-        <el-input v-model="loginFormFields.password" type="password"></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="submitForm('loginForm')">登录</el-button>
-      </el-form-item>
-    </el-form>
-    <p>新用户？<router-link to="/register">点此注册</router-link></p>
+    <div class="container">
+    <el-main>
+    <el-row :gutter="14" type="flex" justify='center' align='middle'>
+     <el-col :xs="20" :sm="20" :md="20" :lg="8" :xl="8" >
+       <div class="grid-content bg-purple">
+         <h1>Hello, Login</h1>
+        <el-form :model="loginFormFields" ref="loginForm" :rules="rules" v-loading="loading" label-position='top' style="margin: 20px">
+          <el-form-item label="User Name" prop="username">
+            <el-input v-model="loginFormFields.username"></el-input>
+          </el-form-item>
+          <el-form-item label="Password" prop="password">
+            <el-input v-model="loginFormFields.password" type="password"></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" @click="submitForm('loginForm')">Login</el-button>
+          </el-form-item>
+        </el-form>
+        <p>New User？<router-link to="/register">Register</router-link></p>
+        </div>
+     </el-col>
+    </el-row>
+  </el-main>
   </div>
+</div>
 </template>
 
 <script>
@@ -59,7 +69,7 @@ export default {
 </script>
 
 <style scoped>
-* {
+ h1 {
   text-align: center;
 }
 </style>

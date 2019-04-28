@@ -1,24 +1,35 @@
 <template>
   <div>
-    <h1>注册</h1>
-    <el-form :model="registerFormFields" ref="registerForm" label-width="80px" :rules="rules" v-loading="loading">
-      <el-form-item label="用户名" prop="username">
-        <el-input v-model="registerFormFields.username"></el-input>
-      </el-form-item>
-      <el-form-item label="邮箱" prop="email">
-        <el-input v-model="registerFormFields.email"></el-input>
-      </el-form-item>
-      <el-form-item label="密码" prop="password">
-        <el-input v-model="registerFormFields.password" type="password" auto-complete="off"></el-input>
-      </el-form-item>
-      <el-form-item label="确认密码" prop="confirm">
-        <el-input v-model="registerFormFields.confirm" type="password" auto-complete="off"></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="submitForm('registerForm')">注册</el-button>
-      </el-form-item>
-    </el-form>
-    <p>已经注册过了？<router-link to="/login">点此登录</router-link></p>
+    <div class="container">
+    <el-main>
+    <el-row :gutter="14" type="flex" justify='center' align='middle'>
+     <el-col :xs="20" :sm="20" :md="20" :lg="8" :xl="8" >
+           <div class="grid-content bg-purple">
+            <h1>Hello Register</h1>
+        <el-form :model="registerFormFields" ref="registerForm" :rules="rules" v-loading="loading" label-position='top' style="margin: 20px">
+          <el-form-item label="User Name" prop="username">
+            <el-input v-model="registerFormFields.username"></el-input>
+          </el-form-item>
+          <el-form-item label="Email" prop="email">
+            <el-input v-model="registerFormFields.email"></el-input>
+          </el-form-item>
+          <el-form-item label="Password" prop="password">
+            <el-input v-model="registerFormFields.password" type="password" auto-complete="off"></el-input>
+          </el-form-item>
+          <el-form-item label="Confirm Password" prop="confirm">
+            <el-input v-model="registerFormFields.confirm" type="password" auto-complete="off"></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" @click="submitForm('registerForm')">Register Now</el-button>
+          </el-form-item>
+        </el-form>
+        <p>Got An Account Already？<router-link to="/login">Login</router-link></p>
+         </div>
+
+  </el-col>
+  </el-row>
+  </el-main>
+  </div>
   </div>
 </template>
 
@@ -95,7 +106,7 @@ export default {
 </script>
 
 <style scoped>
-* {
+h1 {
   text-align: center;
 }
 </style>

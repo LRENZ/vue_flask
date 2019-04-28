@@ -8,3 +8,4 @@ data-dev.db
 *.db
 .flaskenv
 .env
+.pyc
